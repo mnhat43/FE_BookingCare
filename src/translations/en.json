@@ -1,0 +1,76 @@
+{
+    "homeheader": {
+        "specialty": "Medical specialty",
+        "searchdoctor": "Find a doctor by specialty",
+        "health-facility": "Health facility",
+        "select-room": "Select room",
+        "doctor": "Doctor",
+        "choose-doctor": "Choose doctor",
+        "fee": "Fee",
+        "check-health": "Check health",
+        "support": "Support",
+        "welcome": "Welcome"
+    },
+    "banner": {
+        "title1": "MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "find-doctor": "Find doctor",
+        "specialist-examination": "Specialist-examination",
+        "remote-examination": "Remote examination",
+        "general-examination": "General examination",
+        "medical-tests": "Medical tests",
+        "mental-health-examination": "Mental health examination",
+        "dental-examination": "Dental examination"
+    },
+    "menu": {
+        "admin": {
+            "user": "User",
+            "manage-doctor": "Manage doctor",
+            "manage-admin": "Manage admin",
+            "crud": "CRUD user",
+            "crud-redux": "CRUD redux",
+            "clinic": "Clinic",
+            "manage-clinic": "Manage clinic",
+            "specialty": "Specialty",
+            "manage-specialty": "Manage specialty",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
+        }
+    },
+    "manage-user": {
+        "add": "Add a new user",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First name",
+        "last-name": "last name",
+        "phone-number": "Phone Number",
+        "address": "Address",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Avatar",
+        "save": "Save",
+        "edit": "Save change"
+    },
+    "homepage": {
+        "outstanding-doctor": "Last week's featured doctor",
+        "more-infor": "More Infor"
+    },
+    "manage-schedule": {
+        "title": "Manage doctor's medical examination plans",
+        "choose-doctor": "Choose Doctor",
+        "choose-date": "Choose Date",
+        "save": "Save infor"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-schedule": "Doctors do not have appointments during this time!",
+            "choose": "Choose ",
+            "book-free": " and book (free)"
+        }
+    }
+}

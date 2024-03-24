@@ -1,0 +1,61 @@
+.section-handBook {
+    background: white;
+    .handBook-content {
+        margin: 40px auto;
+        max-width: 1208px;
+        position: relative;
+        padding: 20px 0;
+        .handBook-titlte {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .handBook-more {
+            display: inline-block;
+            font-size: 20px;
+            color: rgb(52, 146, 158);
+            background-color: rgb(218, 243, 246);
+            padding: 10px 8px;
+            border-radius: 16px;
+            font-weight: 600;
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+        }
+        .handBook-item {
+            .item-container {
+                // margin-right: 20px;
+                // margin-left: 20px;
+                height: 323px !important;
+                padding: 20px;
+                cursor: pointer;
+
+                .item-img {
+                    // height: 70%;
+                    img {
+                        width: 100%;
+                        // height: 100%;
+                        object-fit: contain;
+                        border-radius: 16px;
+                        border: 1px solid rgb(241, 241, 241);
+                    }
+                }
+                .item-text {
+                    padding-top: 25px;
+                    margin-bottom: 5px;
+                    text-align: start;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: rgb(26, 26, 26);
+                    margin-top: 5px;
+                    -webkit-line-clamp: 2 !important;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow: hidden !important;
+                    display: -webkit-box !important;
+                    -webkit-box-orient: vertical !important;
+                }
+            }
+        }
+    }
+}

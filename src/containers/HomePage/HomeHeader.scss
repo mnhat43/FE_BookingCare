@@ -1,0 +1,186 @@
+.home-header-container {
+    height: 78px;
+    width: 100%;
+    padding: 0 40px;
+    position: sticky;
+    background: rgb(237, 255, 250);
+    z-index: 2;
+    top: 0;
+    .home-header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        .left-content {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            .icon-Bar-Header {
+                font-size: 25px;
+                color: gray;
+                cursor: pointer;
+                margin-right: 15px;
+            }
+
+            .header-logo {
+                background: url("../../assets/logo.svg") center no-repeat;
+                height: 40px;
+                width: 160px;
+                cursor: pointer;
+            }
+        }
+        .center-content {
+            width: 50%;
+            display: flex;
+            font-size: 12px;
+            align-items: center;
+            justify-content: space-between;
+            .child-content {
+                b {
+                    font-weight: 600;
+                }
+                .subs-title {
+                    font-weight: 300;
+                }
+            }
+        }
+        .right-content {
+            width: 25%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .support {
+                padding-right: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                i {
+                    font-size: 15px;
+                    margin-right: 15px;
+                }
+            }
+
+            .language-vi {
+                cursor: pointer;
+                opacity: 0.2;
+                &.active {
+                    opacity: 1;
+                    span {
+                        color: orange;
+                    }
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+                margin-right: 15px;
+            }
+
+            .language-en {
+                cursor: pointer;
+                opacity: 0.2;
+                &.active {
+                    opacity: 1;
+                    span {
+                        color: blue;
+                    }
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+.homde-header-banner {
+    background: url("../../assets/header-background.jpg");
+    background-size: cover;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    .content-up {
+        height: 60%;
+        background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0));
+        .title1 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            text-shadow: 1px 1px 1px #333;
+            margin-bottom: 5px;
+            margin-top: 50px;
+        }
+
+        .title2 {
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            text-shadow: 1px 1px 1px #333;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .search {
+            margin: 0 auto;
+            width: 400px;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 195, 17, 1);
+            border-radius: 25px;
+
+            i {
+                width: 10%;
+                text-align: center;
+            }
+            input {
+                width: 80%;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    .content-down {
+        height: 40%;
+        position: relative;
+        background-image: linear-gradient(rgba(126, 126, 126, 0), rgba(255, 255, 255, 1));
+        // bottom: -30px;
+        .options {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            .option-child {
+                width: 110px;
+
+                .icon-child {
+                    background-color: white;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border-radius: 50px;
+                    text-align: center;
+                    margin: auto;
+                    i {
+                        font-size: 20px;
+                        color: #49bce2;
+                    }
+                }
+                .text-child {
+                    font-size: 16px;
+                    font-weight: 600;
+                    &:hover {
+                        color: #49bce2;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
