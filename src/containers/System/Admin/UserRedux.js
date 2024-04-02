@@ -99,9 +99,7 @@ class UserRedux extends Component {
                 previewImgURL: objectUrl,
                 avatar: base64
             })
-
         }
-
     }
 
     openPreviewImg = () => {
@@ -209,7 +207,7 @@ class UserRedux extends Component {
         return (
             <div className="user-redux-container" >
                 <div className='title'>
-                    React Redux
+                    CRUD USER
                 </div>
                 <div className='user-redux-body'>
                     <div className='container'>

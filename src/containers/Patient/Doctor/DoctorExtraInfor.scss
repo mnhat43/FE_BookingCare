@@ -1,0 +1,88 @@
+.doctor-extra-infor-container {
+    // padding: 0 16px;
+    .content-up {
+        margin-top: 15px;
+        .title-address {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .name-clinic {
+            font-size: 13px;
+            color: black;
+            font-weight: 600;
+        }
+        .detail-address {
+        }
+    }
+    .content-down {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+
+        .hidden-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: #48c4d3;
+            margin-top: 5px;
+            float: right;
+            cursor: pointer;
+        }
+
+        .show-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: #48c4d3;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        .title-price {
+            span {
+                margin-right: 5px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #666;
+                font-size: 14px;
+            }
+        }
+        .detail-price {
+            border: 1px solid #ddd;
+
+            .content-up {
+                display: flex;
+                margin: 0;
+                padding: 5px;
+
+                background-color: rgba(248, 248, 248, 1);
+
+                .detail-left {
+                    width: 85%;
+                    .up {
+                        font-size: 13px;
+                        color: black;
+                    }
+                    .down {
+                        color: rgba(102, 102, 102, 1);
+                        font-size: 12px;
+                    }
+                }
+                .detail-right {
+                    width: 15%;
+                    font-size: 14px;
+                    font-weight: 500;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .content-down {
+                padding: 5px;
+                margin: 0;
+                font-size: 12px;
+                background-color: #e2e1e1;
+            }
+        }
+    }
+}

@@ -37,7 +37,8 @@
             "manage-handbook": "Manage handbook"
         },
         "doctor": {
-            "manage-schedule": "Manage Doctor's schedule"
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "Manage Doctor's patient"
         }
     },
     "manage-user": {
@@ -57,7 +58,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
-        "more-infor": "More Infor"
+        "more-infor": "More Infor",
+        "specialty-popular": "Specialty popular"
     },
     "manage-schedule": {
         "title": "Manage doctor's medical examination plans",
@@ -71,6 +73,47 @@
             "no-schedule": "Doctors do not have appointments during this time!",
             "choose": "Choose ",
             "book-free": " and book (free)"
+        },
+        "extra-infor-doctor": {
+            "title-address": "Medical examination address",
+            "title-price": "Medical examination price",
+            "detail": "See details",
+            "hide": "Hide price list",
+            "payment": "Patients can pay by: "
+        },
+        "booking-modal": {
+            "title": "Information for scheduling medical examination",
+            "fullName": "Full name",
+            "phone": "Phone number",
+            "email": "Email Address",
+            "address": "Contact address",
+            "reason": "Reason for examination",
+            "birthday": "Date of birth",
+            "gender": "Gender",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
+        },
+        "profile-doctor": {
+            "price-examination": "Examination price: ",
+            "free-appointment": "Free appointment",
+            "more-infor": "More infor"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Create additional doctor information",
+            "select-doctor": "Select Doctor",
+            "intro": "Introductory information:",
+            "save": "Save infor",
+            "create": "Create infor",
+            "select-payment": "Payment methods",
+            "select-province": "Province",
+            "select-price": "Medical examination price",
+            "nameClinic": "Clinic's name",
+            "addressClinic": "Clinic's address",
+            "note": "Note",
+            "select-specialty": "Specialty",
+            "select-clinic": "Clinic"
         }
     }
 }

@@ -6,104 +6,61 @@ import './Specialty.scss'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { getAllSpecialtyService } from '../../../services/userService';
+import { withRouter } from 'react-router-dom';
 
 class Specialty extends Component {
 
-    render() {
-        let settings = this.props.settings;
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSpecialty: []
+        }
+    }
 
+    async componentDidMount() {
+        let res = (await getAllSpecialtyService()).data;
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataSpecialty: res.data
+            })
+        }
+    }
+
+    handleViewDetailSpecially = (item) => {
+        this.props.history.push(`detail-specialty/${item.id}`);
+    }
+
+    render() {
+        let settings = { ...this.props.settings };
+        let { dataSpecialty } = this.state;
         return (
             <div className='section-specialty'>
                 <div className='specialty-content'>
                     <span className='specialty-titlte'>
-                        Chuyên khoa
+                        <FormattedMessage id="homepage.specialty-popular" />
                     </span>
                     <div className='specialty-more'>
-                        Xem thêm
+                        <FormattedMessage id="homepage.more-infor" />
+
                     </div>
                     <Slider {...settings}>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w1920/2023/12/26/101627-co-xuong-khop.png" />
-                                </div>
-                                <div className='item-text'>Cơ Xương Khớp</div>
+                        {
+                            dataSpecialty && dataSpecialty.length > 0 &&
+                            dataSpecialty.map((item, index) => {
+                                return (
+                                    <div className='specialty-item' key={index} onClick={() => this.handleViewDetailSpecially(item)}>
+                                        <div className='item-container'>
+                                            <div className='item-img'>
+                                                <img src={item.image} />
+                                            </div>
+                                            <div className='item-text'>{item.name}</div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
 
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w1920/2023/12/26/101739-than-kinh.png" />
-                                </div>
-                                <div className='item-text'>Thần kinh</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101713-tieu-hoa.png" />
-                                </div>
-                                <div className='item-text'>Tiêu hóa</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101713-tim-mach.png" />
-                                </div>
-                                <div className='item-text'>Tim mạch</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101713-tai-mui-hong.png" />
-                                </div>
-                                <div className='item-text'>Tai mũi họng</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101627-cot-song.png" />
-                                </div>
-                                <div className='item-text'>Cột sống</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101739-y-hoc-co-truyen.png" />
-                                </div>
-                                <div className='item-text'>Y học cổ truyền</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101627-cham-cuu.png" />
-                                </div>
-                                <div className='item-text'>Châm cứu</div>
-
-                            </div>
-                        </div>
-                        <div className='specialty-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2023/12/26/101713-san-phu-khoa.png" />
-                                </div>
-                                <div className='item-text'>Sản phụ khoa</div>
-
-                            </div>
-                        </div>
 
                     </Slider>
                 </div>
@@ -126,4 +83,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));

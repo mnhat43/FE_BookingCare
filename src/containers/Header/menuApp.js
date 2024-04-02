@@ -40,12 +40,14 @@ export const adminMenu = [
 ];
 
 export const doctorMenu = [
-    { //quản lý kế hạch khám bệnh bác si
+    { //quản lý kế hạch khám bệnh bác sĩ
         name: 'menu.admin.user',
         menus: [
             {
                 name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
-
+            },
+            {
+                name: 'menu.doctor.manage-patient', link: '/doctor/manage-patient'
             }
         ]
 

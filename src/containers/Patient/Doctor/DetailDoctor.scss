@@ -1,18 +1,17 @@
 .doctor-detail-container {
     height: 500px;
-    // border: solid 1px red;
 
     .infor-doctor {
         margin: 0 auto;
         max-width: 1200px;
-
         display: flex;
-        // height: 100px;
         padding: 10px 0;
 
         .content-left {
             width: 15%;
             text-align: center;
+            padding: 0 16px;
+
             img {
                 width: 120px;
                 height: 120px;
@@ -24,7 +23,6 @@
             width: 85%;
             display: flex;
             flex-direction: column;
-            padding-left: 10px;
             .title-infor {
                 font-size: 20px;
                 font-weight: 600;
@@ -44,9 +42,11 @@
 
         .content-left {
             width: 50%;
+            border-right: 1px solid #ddd;
         }
         .content-right {
             width: 50%;
+            padding: 0 16px;
         }
         padding: 20px 0;
     }

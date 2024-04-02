@@ -37,7 +37,7 @@ class OutStandingDoctor extends Component {
     }
 
     render() {
-        let settings = this.props.settings;
+        let settings = { ...this.props.settings };
         settings.slidesToShow = 4;
         settings.slidesToScroll = 4;
 

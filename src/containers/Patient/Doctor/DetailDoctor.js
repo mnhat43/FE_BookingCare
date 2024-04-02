@@ -6,6 +6,7 @@ import './DetailDoctor.scss';
 import { getDetailInforDoctorService } from '../../../services/userService';
 import { LANGUAGES } from '../../../utils';
 import DoctorSchedule from './DoctorSchedule';
+import DoctorExtraInfor from './DoctorExtraInfor';
 
 class DetailDoctor extends Component {
     constructor(props) {
@@ -26,10 +27,6 @@ class DetailDoctor extends Component {
             this.setState({
                 detailDoctor: res.data,
             })
-
-            // imageBase64 = new Buffer(user.image, 'base64').toString('binary');
-
-
         }
     }
 
@@ -39,7 +36,6 @@ class DetailDoctor extends Component {
 
 
     render() {
-        console.log("state>>>: ", this.state);
         let { language } = this.props;
         let { detailDoctor } = this.state;
         let nameVi = '', nameEn = '';
@@ -76,8 +72,8 @@ class DetailDoctor extends Component {
                         <div className='content-left'>
                             <DoctorSchedule doctorId={this.state.currentDoctorId} />
                         </div>
-                        <div className='content-right'>
-
+                        <div className='content-right' >
+                            <DoctorExtraInfor doctorId={this.state.currentDoctorId} />
                         </div>
 
                     </div>

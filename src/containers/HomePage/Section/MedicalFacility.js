@@ -4,12 +4,35 @@ import './MedicalFacility.scss'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
+import { getAllClinicService } from '../../../services/userService'
+import { withRouter } from 'react-router-dom';
 class MedicalFacility extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataClinic: [],
+        }
+    }
+
+    async componentDidMount() {
+        let res = (await getAllClinicService()).data;
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataClinic: res.data
+            })
+        }
+    }
+
+    handleViewDetailClinic = (clinic) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-clinic/${clinic.id}`);
+        }
+    }
 
     render() {
         let settings = this.props.settings;
+        let { dataClinic } = this.state;
         return (
             <div className='section-medicalFacility'>
                 <div className='medicalFacility-content'>
@@ -20,61 +43,24 @@ class MedicalFacility extends Component {
                         Xem thêm
                     </div>
                     <Slider {...settings}>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2018/06/18/113555logo-benh-vien-bao-son.jpg" />
-                                </div>
-                                <div className='item-text'>Bệnh viện Đa khoa Bảo Sơn 2</div>
+                        {
+                            dataClinic && dataClinic.length > 0 &&
+                            dataClinic.map((item, index) => {
+                                return (
+                                    <div className='medicalFacility-item' key={index}
+                                        onClick={() => this.handleViewDetailClinic(item)}
 
-                            </div>
-                        </div>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2018/06/18/143606logo-phong-kham-viet-life.png" />
-                                </div>
-                                <div className='item-text'>Phòng khám Vietlife MRI Trần Bình Trọng</div>
-
-                            </div>
-                        </div>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2022/05/12/101707-logo-sg.png" />
-                                </div>
-                                <div className='item-text'>Phòng khám Đa khoa Saigon Healthcare</div>
-
-                            </div>
-                        </div>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2018/07/02/175558benh-vien-lao-khoa-lo-go-1.jpeg" />
-                                </div>
-                                <div className='item-text'>Bệnh viện Lão khoa Trung ương</div>
-
-                            </div>
-                        </div>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2018/05/11/181208mediteclogo.jpeg" />
-                                </div>
-                                <div className='item-text'>Phòng khám Đa khoa Meditec</div>
-
-                            </div>
-                        </div>
-                        <div className='medicalFacility-item'>
-                            <div className='item-container'>
-                                <div className='item-img'>
-                                    <img src="https://cdn.bookingcare.vn/fo/w640/2022/05/09/162239-logo-sto.jpg" />
-                                </div>
-                                <div className='item-text'>Bệnh viện STO Phương Đông</div>
-
-                            </div>
-                        </div>
-
+                                    >
+                                        <div className='item-container'>
+                                            <div className='item-img'>
+                                                <img src={item.image} />
+                                            </div>
+                                            <div className='item-text'>{item.name}</div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </Slider>
                 </div>
 
@@ -96,4 +82,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MedicalFacility));

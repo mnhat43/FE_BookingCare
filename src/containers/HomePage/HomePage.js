@@ -25,7 +25,6 @@ class HomePage extends Component {
             slidesToShow: 3,
             slidesToScroll: 3,
         };
-        console.log("homepageeee");
         return (
             <div>
                 <HomeHeader isShowBanner={true} />
